@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>证书详情</title>
+    <p>检测时间： {{ current_date }}</p>
+</head>
+<body>
+<p><a href="/monitor">添加证书</a></p>
+{% if certs_list is not None %}
+<p><a href="/monitor/detail">已监控证书</a></p>
+<table>
+
+    <tr>
+        <th>站点名称</th>
+        <th>域名</th>
+        <th>证书序列号</th>
+        <th>起始日期</th>
+        <th>终止日期</th>
+        <th>剩余有效期天数</th>
+        <th>浏览器兼容性</th>
+    </tr>
+    {% for cert in certs_list %}
+    <tr>
+        <td>{{ cert.system_name }}</td>
+        <td>{{ cert.addr }}</td>
+        <td>{{ cert.sn }}</td>
+        <td>{{ cert.start_date }}</td>
+        <td>{{ cert.end_date }}</td>
+        <td>{{ cert.valid_days }}</td>
+        <td>valid</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+</body>
+</html>

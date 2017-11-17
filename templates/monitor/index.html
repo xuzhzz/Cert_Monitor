@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监控证书</title>
+</head>
+<body>
+<form action="/monitor/cert" method="post">
+    {% csrf_token %}
+    <p>站点名称： <input type="text" name="system_name"></p>
+    <p>域名： <input type="text" name="domain"></p>
+    <p>port: <input type="text" name="port" value="443"></p>
+    <p>联系邮箱：<input type="text" name="email"></p>
+    <p>联系电话：<input type="text" name="phone"></p>
+    <p><input type="submit" value="确定"></p>
+</form>
+
+
+</body>
+</html>
